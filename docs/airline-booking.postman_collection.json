@@ -1,0 +1,376 @@
+{
+  "info": {
+    "_postman_id": "f94d10de-64cd-47b0-b3e5-c55547d04694",
+    "name": "airline-booking",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43492093",
+    "_collection_link": "https://go.postman.co/collection/41816611-f94d10de-64cd-47b0-b3e5-c55547d04694?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getAllPassengers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/passengers",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "passengers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllAirports",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/airports",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllAirlines",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/airlines",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airlines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreatePassenger",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"FirstName\": \"Rahul\",\r\n    \"LastName\": \"Tiwari\",\r\n    \"Email\": \"rahul@ps.com\",\r\n    \"Gender\": \"MALE\",\r\n    \"Age\": 27,\r\n    \"ContactNumber\": 93355105800\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/passengers",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "passengers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateAirline",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AirlineName\": \"Air India\",\r\n    \"ContactNumber\": 9335510580\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/airlines",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airlines"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateAirport",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AirportName\": \"CCS Airport\",\r\n    \"Location\": \"KNP\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/airports",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete airport",
+      "request": {
+        "auth": {
+          "type": "inherit"
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/airports/1",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airports",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Airports",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AirportName\": \"Shivaji Airport\",\r\n    \"Aminities\": \"lounge\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/airports/4",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "airports",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getFlights",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{host}}/flights",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "flights"
+          ],
+          "query": [
+            {
+              "key": "search",
+              "value": "DOMESTIC",
+              "type": "text",
+              "id": 0,
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateFlight",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"OriginAirport\": 2,\r\n    \"DestinationAirport\": 3,\r\n    \"FlightType\": \"DOMESTIC\",\r\n    \"AirlineId\": 1,\r\n    \"DepartureAt\": \"2026-02-29 13:01:06.972+05:30\",\r\n    \"ArrivalAt\": \"2026-02-29 15:00:00.972+05:30\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/flights",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "flights"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateFareClass",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"FlightId\": 1,\r\n    \"Price\": 6727,\r\n    \"ClassCode\": \"FIRST\",\r\n    \"BaggagePolicy\": \"we can have here HTML quoted policies as well\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/fare-classes",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "fare-classes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateSeats",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"FlightId\": 1,\r\n    \"FareClassId\": 1,\r\n    \"SeatNumber\": \"A1\",\r\n    \"Status\": \"AVAILABLE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/seats",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "seats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getSeats",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"FlightId\": 1,\r\n    \"FareClassId\": 1,\r\n    \"SeatNumber\": \"A1\",\r\n    \"Status\": \"AVAILABLE\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/seats",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "seats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createBooking",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"PassengerId\": 1,\r\n    \"FlightId\": 1,\r\n    \"SeatId\": 1,\r\n    \"BookingDate\": \"2026-01-29 11:54:17.332+00\",\r\n    \"Status\": \"CONFIRMED\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/bookings",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "bookings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetFareClasses",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"FlightId\": 1,\r\n    \"Price\": 6727,\r\n    \"ClassCode\": \"FIRST\",\r\n    \"BaggagePolicy\": \"we can have here HTML quoted policies as well\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{host}}/fare-classes",
+          "host": [
+            "{{host}}"
+          ],
+          "path": [
+            "fare-classes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
