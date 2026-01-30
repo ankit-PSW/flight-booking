@@ -14,13 +14,14 @@ export const createBooking = async (req, res) => {
             { where: { id: SeatId, Status: 'AVAILABLE' }  }
         );
         
-        setTimeout(() => {
+        setTimeout(() => { // This should only happen if payment is not completed within time limit
             Seat.update(
                 { Status: 'AVAILABLE' },
                 { where: { id: SeatId, Status: 'LOCKED' }  }
             );
         }, 5 * 60 * 1000);
         // const booking = await Booking.create(req.body);
+
         res.status(201).json(req.body);
     } catch (error) {
         res.status(500).json({ message: error.message });
